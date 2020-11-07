@@ -7,7 +7,7 @@ function App() {
   // Citas en localStorage
   let citasInciales = JSON.parse(localStorage.getItem('citas'))
   if (!citasInciales) {
-    citasInciales = null
+    citasInciales = []
   }
 
   // Arreglo de citas
@@ -18,7 +18,7 @@ function App() {
     if (citasInciales) {
       localStorage.setItem('citas', JSON.stringify(citas))
     } else {
-      localStorage.setItem('citas', JSON.stringify(null))
+      localStorage.setItem('citas', JSON.stringify([]))
     }
   }, [citas, citasInciales])
 
